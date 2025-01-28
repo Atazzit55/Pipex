@@ -20,15 +20,12 @@ void	ft_error(char *msg)
 
 void	free_split(char **split)
 {
-	int	i;
-
 	if (!split)
 		return ;
-	i = 0;
-	while (split[i])
+	while (*split)
 	{
-		free(split[i]);
-		i++;
+		free(*split);
+		split++;
 	}
 	free(split);
 }
